@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <section className="sheet padding-10mm">
       <h1>Hello, world!</h1>
       {children}
-    </div>
+    </section>
   )
 }
