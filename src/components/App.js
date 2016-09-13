@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
-import Layout from './Layout';
-import Counter from './Counter';
-import './styles/main.scss'
+import React, { Component } from 'react'
+import Layout from './Layout'
+import Header from './Header'
+import About from './About'
+import Skills from './Skills'
+import Experience from './Experience'
+import Education from './Education'
 
 // If you use React Router, make this component
 // render <Router> with your routes. Currently,
@@ -14,8 +17,12 @@ export default class App extends Component {
   render() {
     return (
       <Layout>
-        <Counter />
+        <Header />
+        <About />
+        <Skills />
+        <Experience />
+        <Education />
       </Layout>
-    );
+    )
   }
 }

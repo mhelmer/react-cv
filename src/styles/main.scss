@@ -26,9 +26,33 @@ body.A4 .sheet { width: 210mm; height: 296mm }
 
 /** Fix for Chrome issue #273306 **/
 @media print {
-  body.A4 { width: 210mm }
+  body.A4 { width: 210mm; padding: 10mm; }
 }
 @page {
   size: A4
 }
 
+body {
+  background: #e0e0e0;
+  font-family: 'Open Sans', sans-serif;
+  color: #000000;
+}
+header {
+  h1 {
+    color: #b9b9b9;
+    font-weight: normal;
+    text-align: right;
+    font-size: 2em;
+    border-bottom: 1px solid #b9b9b9;
+    margin-bottom: 0;
+
+    .surname {
+      color: #737373;
+    }
+  }
+  p {
+    color: #838383;
+    text-align: right;
+    font-style: italic;
+  }
+}
