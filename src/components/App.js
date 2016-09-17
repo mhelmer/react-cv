@@ -18,11 +18,34 @@ const data = {
   skillList: {
     scoreLimit: 5,
     skills: [
-      { name: 'Pretty skilled', score: 2 },
+      { name: 'Pretty skilled', score: 3 },
       { name: 'Not so skilled', score: 1 },
-      { name: 'Very skilled', score: 3 },
+      { name: 'Very skilled', score: 4 },
     ],
   },
+  experience: [
+    {
+      title: 'My current Job',
+      company: 'Company 1',
+      time: '2016 - ',
+      description: 'Doing hard work',
+      tasks: ['some task', 'other task'],
+    },
+    {
+      title: 'My last Job',
+      company: 'Company 2',
+      time: '2013 - 2016',
+      description: 'Doing good work',
+      tasks: ['some task', 'that task'],
+    },
+    {
+      title: 'My first Job',
+      company: 'Company 3',
+      time: '2011 - 2013',
+      description: 'Doing initial work',
+      tasks: ['good task', 'another task'],
+    }
+  ]
 }
 
 export default class App extends Component {
@@ -32,7 +55,7 @@ export default class App extends Component {
         <Header name={data.name} />
         <About />
         <Skills skills={data.skillList.skills} scoreLimit={data.skillList.scoreLimit}/>
-        <Experience />
+        <Experience experience={data.experience} />
         <Education />
       </Layout>
     )
