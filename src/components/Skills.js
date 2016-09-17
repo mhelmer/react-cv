@@ -42,7 +42,8 @@ class SkillDots extends Component {
 }
 
 const Skills = ({ skills, scoreLimit }) => (
-  <section>
+  <section className="skills-section">
+    <h1>Skills</h1>
     <ul>
     { skills.sort((a, b) => a.score - b.score).map(skill => (
       <li key={skill.name} className="skills">

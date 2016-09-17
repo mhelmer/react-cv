@@ -1,7 +1,8 @@
 import React from 'react';
 
 const Education = () => (
-  <section>
+  <section className="education-section">
+    <h1>Education</h1>
     Some education...
   </section>
 )

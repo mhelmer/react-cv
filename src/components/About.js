@@ -1,7 +1,8 @@
 import React from 'react';
 
 const About = () => (
-  <section>
+  <section className="about-section">
+    <h1>About me</h1>
     Some text about me
   </section>
 )
