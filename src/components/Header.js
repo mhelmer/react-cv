@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Header = () => (
+const Header = ({ name }) => (
   <header>
-    <h1>John <span className="surname">Doe</span></h1>
+    <h1>{name.first} <span className="surname">{name.last}</span></h1>
     <p>Cirriculum Vitae</p>
   </header>
 )
