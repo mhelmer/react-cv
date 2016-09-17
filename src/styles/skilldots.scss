@@ -1,3 +1,5 @@
+@import "variables";
+
 .skilldots {
   display: inline-block;
   vertical-align: middle;
@@ -15,6 +17,6 @@
   print-color-adjust: exact; 
 }
 .skilldot-active {
-  background-color: #3873b3;
+  background-color: $brand-primary;
   transition: background-color 200ms ease-in;
 }

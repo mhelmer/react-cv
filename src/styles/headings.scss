@@ -1,0 +1,16 @@
+@import "variables";
+
+section {
+  h1 {
+    &:before {
+      border-bottom: 3px solid $section-heading-color;
+      border-top: 3px solid $section-heading-color;
+      content: "";
+      display: inline-block;
+      height: 0;
+      width: 2em;
+      margin-right: 0.5em;
+      margin-bottom: 4px;
+    }
+  }
+}

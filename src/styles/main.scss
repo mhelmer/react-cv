@@ -1,3 +1,5 @@
+@import "variables";
+
 @page { margin: 0 }
 body { margin: 0 }
 .sheet {
@@ -14,11 +16,11 @@ body.A4 .sheet { width: 210mm; height: 296mm }
 /** For screen preview **/
 @media screen {
   body {
-    background: #e0e0e0;
+    background: $peripheral-color;
   }
   .sheet {
-    background: white;
-    box-shadow: 0 .5mm 2mm rgba(0,0,0,.3);
+    background: $sheet-background-color;
+    box-shadow: 0 .5mm 2mm $sheet-shadow-color;
     margin: 5mm;
     padding: 10mm
   }
@@ -33,26 +35,32 @@ body.A4 .sheet { width: 210mm; height: 296mm }
 }
 
 body {
-  background: #e0e0e0;
+  background: $peripheral-color;
   font-family: 'Open Sans', sans-serif;
-  color: #000000;
+  color: $text-color;
 }
 header {
   h1 {
-    color: #b9b9b9;
+    color: $main-heading-color;
     font-weight: normal;
     text-align: right;
     font-size: 2em;
-    border-bottom: 1px solid #b9b9b9;
+    border-bottom: 1px solid $light-color;
     margin-bottom: 0;
 
-    .surname {
-      color: #737373;
+    .first-name {
+      color: $light-heading-color;
     }
   }
   p {
-    color: #838383;
+    color: $dark-color;
     text-align: right;
     font-style: italic;
+  }
+}
+
+section {
+  h1 {
+    color: $section-heading-color;
   }
 }

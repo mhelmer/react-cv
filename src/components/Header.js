@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = ({ name }) => (
   <header>
-    <h1>{name.first} <span className="surname">{name.last}</span></h1>
+    <h1><span className="first-name">{name.first} </span>{name.last}</h1>
     <p>Cirriculum Vitae</p>
   </header>
 )
