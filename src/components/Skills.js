@@ -1,5 +1,5 @@
 import React from 'react';
-import { SkillDots } from './Indicators'
+import { SkillBar } from './Indicators'
 
 const Skills = ({ skills, scoreLimit }) => (
   <section className="skills-section">
@@ -8,7 +8,7 @@ const Skills = ({ skills, scoreLimit }) => (
     { skills.sort((a, b) => a.score - b.score).map(skill => (
       <li key={skill.name} className="skills">
         {skill.name}:
-        <SkillDots score={skill.score} scoreLimit={scoreLimit} />
+        <SkillBar score={skill.score} scoreLimit={scoreLimit} />
       </li>
     ) ) }
     </ul>

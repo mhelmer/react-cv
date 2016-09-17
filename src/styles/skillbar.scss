@@ -1,0 +1,18 @@
+@import "variables";
+
+.skillbar {
+  background-color: #b9b9b9;
+  display: inline-block;
+  height: 8px;
+  margin: 0 6px;
+  transform: skewX(-36deg);
+  width: 60px;
+}
+.skillbar-active {
+  background-color: $brand-primary;
+  transform: translateX(-50%) scaleX(0);
+  transition: transform 200ms ease-in, opacity 400ms ease-in;
+  opacity: 0;
+  height: 100%;
+  display: block;
+}
