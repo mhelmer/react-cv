@@ -1,14 +1,43 @@
-$brand-primary: #3873b3;
-$light-color: #b9b9b9;
-$dark-color: #838383;
-$darker-color: #737373;
+$gruvbox-bg:       #fbf1c7;
+$gruvbox-bg0:      #fbf1c7;
+$gruvbox-bg0_h:    #f9f5d7;
+$gruvbox-bg0_s:    #f2e5bc;
+$gruvbox-bg1:      #ebdbb2;
+$gruvbox-bg2:      #d5c4a1;
+$gruvbox-bg3:      #bdae93;
+$gruvbox-bg4:      #a89984;
+
+$gruvbox-fg:       #3c3836;
+$gruvbox-fg0:      #282828;
+$gruvbox-fg1:      #3c3836;
+$gruvbox-fg2:      #504945;
+$gruvbox-fg3:      #665c54;
+$gruvbox-fg4:      #7c6f64;
+
+$gruvbox-gray0:   #7c6f64;
+$gruvbox-gray1:   #928374; $gruvbox-gray2:   #928374;
+$gruvbox-red0:    #cc241d; $gruvbox-red1:    #9d0006;
+$gruvbox-green0:  #98971a; $gruvbox-green1:  #79740e;
+$gruvbox-yellow0: #d79921; $gruvbox-yellow1: #b57614;
+$gruvbox-blue0:   #458588; $gruvbox-blue1:   #076678;
+$gruvbox-purple0: #b16286; $gruvbox-purple1: #8f3f71;
+$gruvbox-aqua0:   #689d6a; $gruvbox-aqua1:   #427b58;
+$gruvbox-orange0: #d65d0e; $gruvbox-orange1: #af3a03;
+
+$brand-primary: $gruvbox-blue1;
+$light-color: $gruvbox-fg4;
+$dark-color: $gruvbox-fg3;
+$darker-color: $gruvbox-fg2;
 
 $main-heading-color: $darker-color;
 $light-heading-color: $light-color;
 $section-heading-color: $brand-primary;
 
-$peripheral-color: #e0e0e0;
-$text-color: black;
+$peripheral-color: $gruvbox-gray1;
+$text-color: $gruvbox-fg;
 
-$sheet-background-color: white;
+$sheet-background-color: $gruvbox-bg0;
 $sheet-shadow-color: rgba(0,0,0,.3);
+
+$skillbar-color: $light-color;
+$skillbar-active-color: $brand-primary;
