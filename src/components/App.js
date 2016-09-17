@@ -13,13 +13,22 @@ import Education from './Education'
 // You can ignore this warning. For details, see:
 // https://github.com/reactjs/react-router/issues/2182
 
+const skillList = {
+  scoreLimit: 5,
+  skills: [
+    { name: 'Skill1', score: 1 },
+    { name: 'Skill2', score: 2 },
+    { name: 'Skill3', score: 3 },
+  ],
+}
+
 export default class App extends Component {
   render() {
     return (
       <Layout>
         <Header />
         <About />
-        <Skills />
+        <Skills skills={skillList.skills} scoreLimit={skillList.scoreLimit}/>
         <Experience />
         <Education />
       </Layout>
