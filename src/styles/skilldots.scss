@@ -1,0 +1,20 @@
+.skilldots {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 6px;
+}
+.skilldot {
+  height: 8px;
+  width: 12px;
+  background-color: #b9b9b9;
+  display: block;
+  margin: 0 1px;
+  float: left;
+  transform: skewX(-36deg);
+  -webkit-print-color-adjust: exact; 
+  print-color-adjust: exact; 
+}
+.skilldot-active {
+  background-color: #3873b3;
+  transition: background-color 200ms ease-in;
+}
