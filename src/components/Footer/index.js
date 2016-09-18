@@ -1,7 +1,7 @@
 import React from 'react'
 import FontAwesome from 'react-fontawesome'
-import '../styles/icons.scss'
-import '../styles/footer.scss'
+import '../../styles/icons.scss'
+import '../../styles/footer.scss'
 
 const Email = ({ email }) => (
   <div>
