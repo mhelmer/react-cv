@@ -19,11 +19,14 @@ class SkillDots extends Component {
   }
   componentDidUpdate() {
     if (this.state.value < this.props.score ) {
-      setTimeout(this.tick, 50);
+      this.timeout = setTimeout(this.tick, 50);
     }
   }
   componentDidMount() {
-    setTimeout(this.tick, 50);
+    this.timeout = setTimeout(this.tick, 50);
+  }
+  componentWillUnmount () {
+    clearTimeout(this.timeout)
   }
   render () {
     const { score, scoreLimit } = this.props

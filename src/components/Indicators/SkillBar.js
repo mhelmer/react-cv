@@ -8,7 +8,10 @@ class SkillBar extends Component {
   }
   componentDidMount() {
     const { score, scoreLimit } = this.props
-    setTimeout(() => this.setStyle(score, scoreLimit), 200)
+    this.timeout = setTimeout(() => this.setStyle(score, scoreLimit), 200)
+  }
+  componentWillUnmount () {
+    clearTimeout(this.timeout)
   }
   componentWillReceiveProps(nextProps) {
     const { score, scoreLimit } = nextProps
