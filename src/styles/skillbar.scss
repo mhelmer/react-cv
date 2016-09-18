@@ -1,7 +1,8 @@
 @import "variables";
 
 .skillbar {
-  background-color: $light-color;
+  -webkit-print-color-adjust: exact;
+  background-color: $skillbar-color;
   display: inline-block;
   height: 8px;
   margin: 0 6px;
@@ -9,7 +10,7 @@
   width: 60px;
 }
 .skillbar-active {
-  background-color: $brand-primary;
+  background-color: $skillbar-active-color;
   transform: translateX(-50%) scaleX(0);
   transition: transform 200ms ease-in, opacity 400ms ease-in;
   opacity: 0;
