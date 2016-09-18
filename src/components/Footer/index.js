@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import FontAwesome from 'react-fontawesome'
 import '../../styles/icons.scss'
 import '../../styles/footer.scss'
@@ -10,6 +10,9 @@ const Email = ({ email }) => (
     <a className="contact-row" href={`mailto: ${email}`}>{ email }</a>
   </div>
 )
+Email.propTypes = {
+  email: PropTypes.string.isRequired,
+}
 
 const Address = ({ address, name }) => (
   <div className="contact-address">
@@ -33,12 +36,32 @@ const Address = ({ address, name }) => (
     </div>
   </div>
 )
+Address.propTypes = {
+  name: PropTypes.shape({
+    first: PropTypes.string,
+    last: PropTypes.string,
+  }).isRequired,
+  address: PropTypes.shape({
+    street1: PropTypes.string,
+    street2: PropTypes.string,
+    postCode: PropTypes.string,
+    city: PropTypes.string,
+    country: PropTypes.string,
+  }).isRequired,
+}
+
 const Phone = ({ number }) => (
   <div>
     <FontAwesome className='contact-icon' name='phone' size='lg' />
     <span className="contact-row">{ number }</span>
   </div>
 )
+Phone.propTypes = {
+  number: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+  ]).isRequired,
+}
 
 const Mobile = ({ number }) => (
   <div>
@@ -46,6 +69,7 @@ const Mobile = ({ number }) => (
     <span className="contact-row">{ number }</span>
   </div>
 )
+Mobile.propTypes = Phone.propsTypes
 
 const Footer = ({ contact }) => (
   <footer>
@@ -72,5 +96,9 @@ const Footer = ({ contact }) => (
     { contact.social && <Social socialMedia={contact.social} /> }
   </footer>
 )
+
+Footer.propTypes = {
+  contact: PropTypes.object.isRequired,
+}
 
 export default Footer
