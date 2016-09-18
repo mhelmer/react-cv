@@ -3,13 +3,6 @@ import FontAwesome from 'react-fontawesome'
 import '../styles/icons.scss'
 import '../styles/footer.scss'
 
-const Phone = ({ number }) => (
-  <div>
-    <FontAwesome className='contact-icon' name='phone' size='lg' />
-    <span className="contact-row">{ number }</span>
-  </div>
-)
-
 const Email = ({ email }) => (
   <div>
     <FontAwesome className='contact-icon' name='envelope' size='lg' />
@@ -39,6 +32,20 @@ const Address = ({ address, name }) => (
     </div>
   </div>
 )
+const Phone = ({ number }) => (
+  <div>
+    <FontAwesome className='contact-icon' name='phone' size='lg' />
+    <span className="contact-row">{ number }</span>
+  </div>
+)
+
+const Mobile = ({ number }) => (
+  <div>
+    <FontAwesome className='contact-icon' name='mobile' size='lg' />
+    <span className="contact-row">{ number }</span>
+  </div>
+)
+
 
 const Footer = ({ contact }) => (
   <footer>
@@ -50,6 +57,11 @@ const Footer = ({ contact }) => (
     { (contact.name || contact.address) && (
       <div className="footer-section">
         <Address address={contact.address} name={contact.name} />
+      </div>
+    ) }
+    { contact.mobileNumber && (
+      <div className="footer-section">
+        <Mobile number={contact.mobileNumber} />
       </div>
     ) }
     { contact.phoneNumber && (
