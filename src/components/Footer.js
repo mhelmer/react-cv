@@ -46,6 +46,28 @@ const Mobile = ({ number }) => (
   </div>
 )
 
+const SocialSite = ({ social, details }) => (
+  <a href={details.href}>
+    <FontAwesome className='contact-icon' name='question' size='lg' />
+    <span className="contact-row">
+      { social.username }
+    </span>
+  </a>
+)
+
+const mapSocialToDetails = site => ({
+  href: '#',
+  iconName: 'question'
+})
+
+const Social = ({ socialMedia }) => (
+  <div className="footer-section">
+    { socialMedia.map(social => (
+      <SocialSite key={social.siteName} social={social} details={mapSocialToDetails(social)} />
+    ) ) }
+  </div>
+)
+
 
 const Footer = ({ contact }) => (
   <footer>
@@ -69,6 +91,7 @@ const Footer = ({ contact }) => (
         <Phone number={contact.phoneNumber} />
       </div>
     ) }
+    { contact.social && <Social socialMedia={contact.social} /> }
   </footer>
 )
 
