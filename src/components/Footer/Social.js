@@ -3,9 +3,9 @@ import FontAwesome from 'react-fontawesome'
 import '../../styles/icons.scss'
 
 const SocialSite = ({ social, details }) => (
-  <a href={details.href}>
+  <a href={details.href} className="contact-row">
     <FontAwesome className='contact-icon' name={details.iconName} size='lg' />
-    <span className="contact-row">
+    <span>
       { social.username }
     </span>
   </a>
@@ -20,10 +20,25 @@ SocialSite.propTypes = {
   }).isRequired,
 }
 
-const mapSocialToDetails = site => ({
-  href: '#',
-  iconName: 'question'
-})
+const mapSocialToDetails = site => {
+  switch (site.siteName) {
+    case 'github':
+      return {
+        href: `https://github.com/${site.username}`,
+        iconName: 'github',
+      }
+    case 'linkedin':
+      return {
+        href: `https://linkedin.com/in/${site.username}`,
+        iconName: 'linkedin',
+      }
+    default:
+      return {
+        href: '#',
+        iconName: 'question'
+      }
+  }
+}
 
 const Social = ({ socialMedia }) => (
   <div className="footer-section">
@@ -36,7 +51,7 @@ const Social = ({ socialMedia }) => (
 Social.propTypes = {
   socialMedia: PropTypes.arrayOf(
     PropTypes.shape({
-      siteName: PropTypes.string.isRequired,
+      siteName: PropTypes.oneOf(['github', 'linkedin']).isRequired,
       username: PropTypes.string.isRequired,
     })
   ).isRequired

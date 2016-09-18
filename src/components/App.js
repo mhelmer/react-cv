@@ -27,10 +27,8 @@ const data = {
     phoneNumber: '+12 345 678 9',
     mobileNumber: '+12 987 654 3',
     social: [
-      {
-        siteName: 'github',
-        username: 'verysocial'
-      }
+      { siteName: 'github', username: 'github' },
+      { siteName: 'linkedin', username: 'example' }
     ],
   },
   skillList: {
