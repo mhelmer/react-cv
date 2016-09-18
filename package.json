@@ -2,9 +2,16 @@
   "name": "react-hot-boilerplate",
   "version": "1.0.0",
   "description": "Boilerplate for ReactJS project with hot code reloading",
+  "config": {
+    "buildDir": "./dist"
+  },
   "scripts": {
     "start": "node server.js",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "webpack": "webpack -p --config webpack.config.prod.js",
+    "build": "NODE_ENV=production npm run webpack",
+    "prewebpack": "npm run clean",
+    "clean": "cd $npm_package_config_buildDir && rm -rf * && cd - "
   },
   "repository": {
     "type": "git",
@@ -39,6 +46,7 @@
     "eslint": "^1.10.3",
     "eslint-plugin-react": "^3.6.2",
     "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.22.0",
     "node-sass": "^3.9.3",
     "react-hot-loader": "^3.0.0-beta.1",
     "sass-loader": "^4.0.2",
