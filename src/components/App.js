@@ -5,6 +5,7 @@ import About from './About'
 import Skills from './Skills'
 import Experience from './Experience'
 import Education from './Education'
+import Footer from './Footer'
 
 // If you use React Router, make this component
 // render <Router> with your routes. Currently,
@@ -14,7 +15,10 @@ import Education from './Education'
 // https://github.com/reactjs/react-router/issues/2182
 
 const data = {
-  name: { first: 'John', last: 'Doe' },
+  contact: { 
+    name: { first: 'John', last: 'Doe' },
+    email: 'john.doe@example.com',
+  },
   skillList: {
     scoreLimit: 5,
     skills: [
@@ -52,11 +56,12 @@ export default class App extends Component {
   render() {
     return (
       <Layout>
-        <Header name={data.name} />
+        <Header name={data.contact.name} />
         <About />
         <Skills skills={data.skillList.skills} scoreLimit={data.skillList.scoreLimit}/>
         <Experience experience={data.experience} />
         <Education />
+        <Footer contact={data.contact} />
       </Layout>
     )
   }

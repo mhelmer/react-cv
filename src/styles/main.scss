@@ -39,6 +39,15 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: $text-color;
 }
+a {
+  text-decoration: none;
+  color: $darker-color;
+  font-weight: 600;
+}
+a:hover {
+  color: $dark-color;
+}
+
 header {
   h1 {
     color: $main-heading-color;
@@ -79,4 +88,10 @@ section {
       }
     }
   }
+}
+
+footer {
+  margin: 1em auto;
+  text-align: center;
+  width: 66%;
 }
