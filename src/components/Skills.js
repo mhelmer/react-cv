@@ -1,5 +1,21 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { SkillBar } from './Indicators'
+
+const skillPropType = PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  score: PropTypes.number.isRequired,
+})
+
+const Skill = ({ skill, scoreLimit }) => (
+  <div>
+    {skill.name}:
+    <SkillBar score={skill.score} scoreLimit={scoreLimit} />
+  </div>
+)
+Skill.propTypes = {
+  skill : skillPropType.isRequired,
+  scoreLimit: PropTypes.number.isRequired,
+}
 
 const Skills = ({ skills, scoreLimit }) => (
   <section className="skills-section">
@@ -7,12 +23,15 @@ const Skills = ({ skills, scoreLimit }) => (
     <ul>
     { skills.sort((a, b) => a.score - b.score).map(skill => (
       <li key={skill.name} className="skills">
-        {skill.name}:
-        <SkillBar score={skill.score} scoreLimit={scoreLimit} />
+        <Skill skill={skill} scoreLimit={scoreLimit}/>
       </li>
     ) ) }
     </ul>
   </section>
 )
+Skills.propTypes = {
+  skills: PropTypes.arrayOf(skillPropType).isRequired,
+  scoreLimit: PropTypes.number.isRequired,
+}
 
 export default Skills
