@@ -18,6 +18,13 @@ const data = {
   contact: { 
     name: { first: 'John', last: 'Doe' },
     email: 'john.doe@example.com',
+    address: {
+      street1: 'Some street 23',
+      street2: '2nd row',
+      postCode: '11442',
+      city: 'City',
+    },
+    phoneNumber: '+12 345 678 9',
   },
   skillList: {
     scoreLimit: 5,
