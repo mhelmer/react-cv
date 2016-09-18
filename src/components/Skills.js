@@ -1,5 +1,6 @@
-import React, { PropTypes } from 'react';
-import { SkillBar } from './Indicators'
+import React, { PropTypes } from 'react'
+import { ToggleIndicators } from './Indicators'
+import '../styles/skills.scss'
 
 const skillPropType = PropTypes.shape({
   name: PropTypes.string.isRequired,
@@ -8,8 +9,7 @@ const skillPropType = PropTypes.shape({
 
 const Skill = ({ skill, scoreLimit }) => (
   <div>
-    {skill.name}:
-    <SkillBar score={skill.score} scoreLimit={scoreLimit} />
+    {skill.name}: <ToggleIndicators score={skill.score} scoreLimit={scoreLimit} />
   </div>
 )
 Skill.propTypes = {
@@ -23,7 +23,7 @@ const Skills = ({ skills, scoreLimit }) => (
     <ul>
     { skills.sort((a, b) => a.score - b.score).map(skill => (
       <li key={skill.name} className="skills">
-        <Skill skill={skill} scoreLimit={scoreLimit}/>
+        <Skill skill={skill} scoreLimit={scoreLimit} />
       </li>
     ) ) }
     </ul>
