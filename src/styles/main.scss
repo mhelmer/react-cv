@@ -63,4 +63,20 @@ section {
   h1 {
     color: $section-heading-color;
   }
+  details {
+    overflow: hidden;
+    margin-bottom: 10px;
+    display: block;
+
+    summary {
+      cursor: pointer;
+      padding: 10px;
+      outline: none;
+      display: inline-block;
+
+      &:hover {
+        color: $light-color;
+      }
+    }
+  }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/experience.scss'
 
 const Tasks = ({ tasks }) => (
   <ul className="job-tasks">
@@ -8,20 +9,38 @@ const Tasks = ({ tasks }) => (
   </ul>
 )
 
-const JobTime = ({ time }) => <div className="job-time">{time}</div>
+const JobTime = ({ time }) => (
+  <div className="job-time">
+    {time}
+  </div>
+)
 const JobPosition = ({ title, company }) => (
-  <div className="job-position">{title} at {company}</div>
+  <div className="job-position">
+    <div className="job-title">
+      {title}
+    </div>
+    <div className="job-company">
+      {company}
+    </div>
+  </div>
 )
 const JobDescription = ({ description }) => (
-  <div className="job-description">{description}</div>
+  <span className="job-description">{description}</span>
+)
+const JobDetails = ({ description, tasks }) => (
+  <details className="job-details" open>
+    <summary>
+      <JobDescription description={description} />
+    </summary>
+    <Tasks tasks={tasks} />
+  </details>
 )
 
 const Job = ({ job }) => (
   <li className="job">
     <JobTime time={job.time} />
     <JobPosition title={job.title} company={job.company} />
-    <JobDescription description={job.description} />
-    <Tasks tasks={job.tasks} />
+    <JobDetails description={job.description} tasks={job.tasks} />
   </li>
 )
 
